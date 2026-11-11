@@ -1,0 +1,580 @@
+\documentclass[12pt, reqno, a4paper]{amsart}
+\usepackage{latexsym,fancyheadings,amsmath,amssymb,amsthm,amsbsy,graphicx, cite, floatrow,subcaption}
+\usepackage[symbol]{footmisc}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\usepackage[cp1251]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english,ukrainian]{babel}
+
+\usepackage{floatrow}
+\floatsetup[table]{capposition=top}
+\floatsetup[figure]{capposition=bottom,%
+capbesideposition={right,bottom},%
+capbesidewidth=0.3\textwidth,%
+capbesidesep=quad% розділювач між картинкою та підписом
+}
+
+\textwidth = 13.1cm
+\textheight = 21cm
+\topmargin = 0cm
+\headheight = 1cm
+
+\theoremstyle{definition}
+\newtheorem{defin}{Означення}
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}
+\theoremstyle{plain}
+\newtheorem{lemma}{Лема}
+\theoremstyle{plain}
+\newtheorem{corollary}{Наслідок}
+\theoremstyle{remark}
+\newtheorem*{remark}{Зауваження}
+\theoremstyle{plain}
+\newtheorem{state}{Твердження}
+
+
+\newcommand{\argmin}{\mathop{\rm argmin}\nolimits}
+\newcommand{\prox}{\mathop{\rm prox}\nolimits}
+\newcommand{\diver}{\mathop{\rm div}\nolimits}
+\newcommand{\dom}{\mathop{\rm dom}\nolimits}
+\newcommand{\diam}{\mbox{\rm diam}}
+\newcommand{\conv}{\mbox{\rm conv}}
+\newcommand{\supp}{\mbox{\rm supp}}
+\newcommand{\inter}{\mbox{\rm int}}
+\newcommand{\gr}{\mbox{\rm grad}}
+\newcommand{\ri}{\mbox{\rm ri}}
+
+\begin{document}
+
+\newcommand{\FirstLeftHeader}[1]{\lhead{\fancyplain{\footnotesize #1}{}}}
+\newcommand{\Headers}[2]{\chead[\fancyplain{}{\footnotesize #1}]{\fancyplain{}{\footnotesize #2}}}
+\newcommand{\NoPageNumbers}{\cfoot{}}
+\newcommand{\FirstRightHeader}[1]{\rhead{\fancyplain{\footnotesize #1} {}}}
+\newcommand{\AuthorInfo}[1]{\bigskip \noindent {\sc #1}\bigskip}
+\newcommand{\Caption}[2]{\medskip\begin{center}{\sc #1} #2\end{center}\smallskip}
+
+\makeatletter
+\renewcommand{\labelenumi}{\theenumi.}
+\renewcommand{\labelitemi}{ -- }
+\renewcommand{\@biblabel}[1]{#1.\hfill}
+\renewcommand{\refname}{\sc Література}
+
+
+
+\newenvironment{Abstract} { \vspace{10pt}
+ \begin{quote}\footnotesize {\sc Abstract.}}
+ {\end{quote}\vspace{5pt}}
+\newenvironment{Abstract_u} {
+ \begin{quote}\footnotesize {\sc Анотація.}}
+ {\end{quote}\vspace{10pt}}
+\newenvironment{Udc}{\begin{flushleft} УДК}
+ {\end{flushleft}}
+\newenvironment{MSC}{\begin{flushleft} MSC}
+ {\end{flushleft}}
+\newenvironment{Doi}{\begin{flushleft} DOI}
+ {\end{flushleft}}
+\newenvironment{Title}{\vspace{10pt} \bf \begin{center}}
+ {\end{center}}
+\newenvironment{Authors}{\vspace{10pt} \sc \begin{center}}
+ {\end{center}}
+\newenvironment{Head}{\vspace{10pt} \sc \begin{center}}
+ {\end{center}}
+
+
+
+
+\newcommand\blfootnote[1]{
+    \begingroup
+    \renewcommand\thefootnote{}\footnote{#1}
+    \addtocounter{footnote}{-1}
+    \endgroup
+}
+
+
+\pagestyle{fancyplain} \thispagestyle{plain}
+\FirstLeftHeader{Журнал обчислювальної та\ \ \ \ \ \ \ \ \
+\textbf{20**, № * (***)}\\прикладної математики}
+\FirstRightHeader{Journal of Numerical \\ \& Applied
+Mathematics}
+
+\newcommand {\R} {\mathbb{R}}
+% дробова похідна
+\newcommand{\FrDer}[2][0]{\ensuremath{\mathcal{D}_{#1}^{#2}}}
+% простір неперервних функцій на Omega
+\newcommand{\COmega}{C\left(\overline\Omega\right)}
+
+%Приклад оформлення-------------------------------------------
+%---------------------ПОЧАТОК СТАТТІ--------------------------
+%-------------------------------------------------------------
+
+ {\small
+%---------------------Парні та непарні колонтитули------------
+  \Headers{А. А. АВТОР1, А. А. АВТОР2}{НАЗВА СТАТТІ}
+  \NoPageNumbers
+
+%---------------------УДК-------------------------------------
+\begin{Udc}
+ ***, ***, ...  \blfootnote{\copyright 20xx \textbf{Автор1Ім'я Автор1Прізвище}, \textbf{Автор2Ім'я Автор2Прізвище}. This is an open-access article distributed under the terms of \textbf{Creative Commons Attribution Licence (CC BY)}.}
+\end{Udc}
+%---------------------MSC - Mathematics Subject Classification see to
+%--------------------------http://msc2010.org/mscwiki/index.php?title=MSC2010
+\begin{MSC}
+   ***, ***, ...
+\end{MSC}
+
+%---------------------ЗАГОЛОВОК СТАТТІ АНГЛІЙСЬКОЮ------------
+\begin{Title}
+ARTICLE TITLE
+\end{Title}
+%---------------------АВТОРИ АНГЛІЙСЬКОЮ-----------------------
+  \begin{Authors}
+      {A. A. Author1${\mathstrut}^1$\footnote[1]{corresponding author},  A. A. Author2${\mathstrut}^2$}
+  \end{Authors}
+
+%!!!!!!!!Скопіювати для кожного автора, якщо організацій більше ніж 1
+%---------------------Організації АНГЛІЙСЬКОЮ-----------------------
+{\scriptsize \noindent ${\mathstrut}^1$Faculty of Computer Science and Cybernetics, Taras Shevchenko National University of Kyiv, Kyiv, Ukraine, E-mail: author1email@mail.com. ORCID: ORCID1.
+\par}
+
+{\scriptsize \noindent ${\mathstrut}^2$Another affiliation, E-mail: author2email@mail.com. ORCID: ORCID2.
+\par}
+
+
+%---------------------ЗАГОЛОВОК СТАТТІ УКРАЇНСЬКОЮ------------
+ \begin{Title}
+НАЗВА СТАТТІ
+ \end{Title}
+
+%---------------------АВТОРИ УКРАЇНСЬКОЮ-----------------------
+  \begin{Authors}
+{А. А. Автор1${\mathstrut}^1$, А. А. Автор2${\mathstrut}^2$}
+  \end{Authors}
+
+%!!!!!!!!Скопіювати для кожного автора, якщо організацій більше ніж 1
+%---------------------Організації УКРАЇНСЬКОЮ-----------------------
+{\scriptsize  \noindent ${\mathstrut}^1$Факультет комп'ютерних наук та кібернетики, Київський нацiональний унiверситет iменi Тараса Шевченка, Київ, Україна, E-mail: author1email@mail.com. ORCID: ORCID1.
+}
+
+
+{\scriptsize  \noindent ${\mathstrut}^2$Інша організація, E-mail: author2email@mail.com. ORCID: ORCID2.
+}
+
+%---------------------РЕЗЮМЕ АНГЛІЙСЬКОЮ-----------------------
+\begin{Abstract}
+\textit{The aim of the article} is \dots
+
+  \textit{Research methodology.} \dots
+
+  \textit{Results of the research.} \dots (the biggest part of abstract)
+
+  \textit{Practical significance.} \dots
+
+(Short versions of corresponding sections from the body of the article.)
+    \\
+  %!!!!!!!!!!!!!!no more than 4 keywords if possible
+{\sc Keywords:} keyword1, keyword2, keyword3, keyword4.
+\end{Abstract}
+
+%---------------------РЕЗЮМЕ УКРАЇНСЬКОЮ-----------------------
+\begin{Abstract_u}
+\textit{Метою статті} є \dots
+
+  \textit{Методика дослідження.} \dots
+
+  \textit{Результати дослідження.} \dots (найбільша з частин анотації)
+
+  \textit{Практична значимість.} \dots
+
+(Короткі версії відповідних пунктів з тіла статті.)
+    \\
+%!!!!!!!!!!!!!!не більше 4 ключових слів, якщо це можливо
+    {\sc Ключові слова:}  ключ1, ключ2, ключ3, ключ4. 
+  \end{Abstract_u}
+
+
+{\scriptsize
+%\hangindent=0,2cm
+\noindent
+DOI: \href{doi.org/}{10.17721/2706-9699.}
+\par}
+
+
+%-------------------------ТЕКСТ СТАТТІ------------------------
+
+\newpage
+
+
+\begin{Head} 
+1. Вступ
+\end{Head}
+
+Цей пункт містить інформацію про проблему, 
+яку досліджується в статті, 
+мотивацію до дослідження 
+та обґрурнтування важливості дослідження.
+
+
+\begin{Head} 
+2. Огляд літератури
+\end{Head}
+
+Сучасний стан доліджень має бути описаний, використовуючи Літературу. (Нумерація списку літератури повинна відповідати порядку згадувань джерел в основному тексті)
+
+\begin{Head} 
+2. Мета.
+\end{Head}
+
+Мета дослідження (коротко).
+
+\begin{Head}
+3. Mетодика
+\end{Head}
+
+Цей пункт містить інформацію про те, як проводилися дослідження. 
+Серед іншого, мають бути зазначено, що саме
+зроблено, як довго проводилися дослідження, 
+які матеріали або обладнання використовувалися під час дослідження,
+які теореми використовувалися, 
+як саме збиралися дані, 
+як аналізуватися дані, 
+чому були обрані саме такі методи дослідження або розв'язання задачі, а не інші.
+
+
+
+\begin{Head}
+4. Результати
+\end{Head}
+
+Цей пункт має містити результати дослідження без додаткових коментарів.
+До результатів відносяться нові теореми, означення, зібрані дані та результати обчислювальних експериментів. Тільки опис, коментарі та інтерпретація 
+результатів містяться в пункті Обговорення
+
+\begin{Head}
+5. Обговорення
+\end{Head}
+
+В цьому пункті мають бути 
+підсумовані основні результати дослідження,
+описаний зв'язок Ваших результати з іншими дослідженнями,
+описані недоліки поточної стратегії розв'язання проблеми,
+сформулювані теми майбутніх досліджень,
+описана теоретична та практична цінність Ваших результатів.
+
+
+
+\begin{Head}
+6. Висновки
+\end{Head}
+
+Мета та основні результати в короткій формі.
+
+\begin{Head}
+7. Подяки (необов'язково)
+\end{Head}
+
+Перерахування людей, які взяли участь у дослідженні, але не потрапили до списку авторів. Ви маєте 
+отримати особистий дозвіл на включення до цього пункту від кожної особи, яку збираєтеся тут згадати. 
+
+\bigskip
+
+  %------------------------Financial and Equipment Support [if needed]: Specific information about organizations, agencies, or companies that supported the research.
+{\scriptsize
+%\hangindent=0,2cm
+\noindent
+Дослідження підтримано грантом... (необов'язково)
+\par}
+%------------------------Conflicts of Interest [if needed]: List and explain any conflicts of interest.
+{\scriptsize
+%\hangindent=0,2cm
+\noindent
+Автори заявляють про відсутність конфлікту інтересів щодо публікації цієї статті. 
+\par}
+
+
+
+
+
+\begin{Head}
+Tex приклади.
+\end{Head}
+Це не частина IMRAD-структури, лише кілька корисних прикладів Tex-коду, який часто використовується в статтях журналу. 
+
+\bigskip
+Ось так виглядають \textbf{напівжирний} та \textit{похилені} слова.
+
+
+\bigskip
+Ось так виглядаєть цитування: \cite{bib1}, \cite{bib1,bib2,bib3}.
+
+
+\bigskip
+Ось так виглядає формула.
+$$\left\| a\right\| _{*} =\max \left\{\left(a,b\right):\; \; \left\| b\right\| =1\right\}\, .$$
+
+
+\begin{equation*}
+(Ay, y -x ) \geq 0.
+\end{equation*}
+
+
+\bigskip
+Ось так виглядає формула з текстом всередині.
+
+\begin{equation*}
+\mbox{find} \ \ x \in C \, \, \, \mbox{such that}  \quad (Ay, y -x ) \geq 0 \quad  \forall \, y \in C\, .
+\end{equation*}
+
+
+\bigskip
+Так виглядає пронумерована формула.
+
+\begin{equation}
+  \label{eq1}
+\mbox{знайти} \ \ x \in C \, \, \, \mbox{таке, що}  \quad (Ay, y -x ) \geq 0 \quad  \forall \, y \in \mathbb R\, .
+\end{equation}
+
+
+\bigskip
+Так виглядають формули в тексті: 
+$\left(Ax,y-x\right)\ge 0$.
+
+
+
+\bigskip
+
+Так виглядає блок формул.
+$$\begin{array}{l}
+x_{n+1} =\pi _{x_{n} } \left(-\lambda Ay_{n} \right)\, , \\
+y_{n+1} =\pi _{x_{n+1} } \left(-\lambda Ay_{n} \right)\, .
+\end{array}
+$$
+
+\bigskip
+Так виглядає пронумерована формула, яка складається більше ніж з 1 рядка.
+\begin{eqnarray}
+\label{nergen}
+d\left(z, x_{n+1} \right) \le d \left( z, x_{n} \right) - \left(1-\left(1+\sqrt{2} \right)\frac{\lambda L}{\sigma } \right) d\left(y_{n}, x_{n} \right)- \nonumber \\  -\left(1-\sqrt{2} \frac{\lambda L}{\sigma } \right) d\left(x_{n+1}, y_{n} \right) + \frac{\lambda L}{\sigma }  d\left(x_{n}, y_{n-1} \right) \, .
+\end{eqnarray}
+
+
+\bigskip
+Так виглядає посилання на формулу: \eqref{eq1}.
+
+
+\bigskip
+Так виглядає матриця.
+\begin{equation}       \label{matr2}    
+     \left[
+     \begin{array}{ccccccc|c}
+     0     & \dots & 0                      & \dots& 0                     & \dots & 0     & {h}_{i_1}    \\
+     0     & \dots & {{g}_{i_2}^{j_1}}      & \dots& {{g}_{i_2}^{j_K}}     & \dots & 0     & {h}_{i_2}    \\
+     0     & \dots & 0                      & \dots& 0                     & \dots & 0     & {h}_{i_3}    \\
+     0     & \dots & 0                      & \dots& 0                     & \dots & 0     &{h}_{i_4}     \\
+     \dots & \dots &\dots                   & \dots& \dots                 & \dots & \dots & \dots        \\
+     0     & \dots & {{g}_{i_{M-1}}^{j_1}}  & \dots& {{g}_{i_{M-1}}^{j_K}} & \dots & 0     & {h}_{i_{M-1}}\\
+     0     & \dots & 0                      & \dots& 0                     & \dots & 0     & {h}_{i_M}
+      \end{array}
+      \right].
+    \end{equation}
+
+\bigskip
+Так виглядає означення.
+
+\begin{defin} Let \dots
+\end{defin}
+
+
+\bigskip
+Так виглядає лема та її доведення.
+\begin{lemma}
+\label{lemnergen}
+Let \dots Then, \dots
+
+\bigskip
+
+\end{lemma}
+\begin{proof}[Proof]
+  \dots
+
+\end{proof}
+
+
+
+\bigskip
+
+Так виглядає теорема та її доведення.
+
+\begin{theorem}
+\label{thconver}
+Let \dots Then, \dots
+\end{theorem}
+\begin{proof}[Proof]
+\dots
+\end{proof}
+
+
+
+\bigskip
+Так виглядає зауваження.
+
+\begin{remark} Recall, \dots
+\end{remark}
+
+
+\bigskip
+Так виглядає твердження.
+
+\begin{state} \dots
+\end{state}
+
+
+
+
+\bigskip
+Так виглядає список.
+\begin{itemize}
+\item[$\bullet$] \dots
+\item[$\bullet$] \dots
+\item[$\bullet$] \dots
+\end{itemize}
+
+
+\bigskip
+Так виглядає алгоритм.
+\hrule\medskip
+\textbf{Алгоритм 1. Якийсь алгоритм}\medskip
+\hrule\medskip
+Крок 1. \dots
+
+Крок 2. \dots
+
+\dots
+
+\bigskip
+
+\hrule\medskip
+
+
+\bigskip
+Так виглядає таблиця: Табл. \ref{tabl1}.
+
+\begin{table}[]
+  \centering
+  \caption{Підпис.}
+  \label{tabl1}
+  \begin{tabular}{|l|l|l|l|l|ll|}
+  \hline
+  n       & N      & A          & B       & C      & D               & E  \\ \hline
+  100     &   100  &    0.426   &  0.426  &  0.426 &    0.426        &   0.426    \\
+  200     &   100  &    0.426   &  0.426  &  0.426 &    0.426        &   0.426    \\
+  300     &   100  &    0.426   &  0.426  &  0.426 &    0.426        &   0.426    \\
+  400     &   100  &    0.426   &  0.426  &  0.426 &    0.426        &   0.426    \\
+  500     &   100  &    0.426   &  0.426  &  0.426 &    0.426        &   0.426    \\ \hline
+  \end{tabular}
+  \end{table}
+
+
+\bigskip
+Так виглядає рисунок: Рис. \ref{test0edges}.
+\begin{figure}
+      \centering
+      \includegraphics[width=\linewidth]{pic2del_1.eps}
+      \caption{Підпис.}
+      \label{test0edges}
+    \end{figure}
+
+\bigskip
+Так виглядають багато рисунків, поєднаних разом, а також посилання на один з таких рисунків: Рис. \ref{ht_fig:anim_10}.
+
+ \begin{figure}
+      \centering
+      \begin{subfigure}{4cm}
+      \centering
+      \includegraphics[width=\linewidth]{pic2del_1.eps}
+      \caption{Підпис1}
+      \label{ht_fig:anim_10}
+      \end{subfigure}%
+      \begin{subfigure}{4cm}
+      \centering
+      \includegraphics[width=\linewidth]{pic2del_2.eps}
+      \caption{Підпис2}
+      \label{ht_fig:anim_1010}
+      \end{subfigure}
+      \begin{subfigure}{4cm}
+        \centering
+        \includegraphics[width=\linewidth]{pic2del_1.eps}
+        \caption{Підпис3}
+        \label{ht_fig:anim_1020}
+        \end{subfigure}
+      \\
+      \begin{subfigure}{4cm}
+          \centering
+          \includegraphics[width=\linewidth]{pic2del_1.eps}
+          \caption{Підпис4}
+          \label{ht_fig:anim_1429}
+      \end{subfigure}%
+      \begin{subfigure}{4cm}
+          \centering
+          \includegraphics[width=\linewidth]{pic2del_1.eps}
+          \caption{Підпис5}
+          \label{ht_fig:anim_1991}
+      \end{subfigure}
+      \begin{subfigure}{4cm}
+        \centering
+        \includegraphics[width=\linewidth]{pic2del_1.eps}
+        \caption{Підпис6}
+        \label{ht_fig:anim_1200}
+        \end{subfigure}
+        
+      \caption{Підпис.}
+      \label{test1edges}
+    \end{figure}
+
+
+
+\bigskip
+
+
+
+
+
+
+
+\begin{thebibliography}{99}
+
+
+
+\bibitem{bib1} Mastroeni G. On auxiliary principle for equilibrium problems. In: Daniele, P. et al. (eds.) Equilibrium Problems and Variational Models. Kluwer Academic Publishers, Dordrecht, 2003. P. 289-298.
+\bibitem{bib2} Semenov V. V. A Version of the Mirror descent Method to Solve Variational Inequalities. \emph{Cybernetics and Systems Analysis}.  2017.  Vol. 53.  P. 234--243.
+\bibitem{bib3} Gidel G., Berard H., Vincent P., Lacoste-Julien S. A Variational Inequality Perspective on Generative Adversarial Networks. \emph{arXiv:1802.10551}. 2018.
+\bibitem{bib4} Popov L. D. A modification of the Arrow-Hurwicz method for search of saddle points. \emph{Mathematical notes of the Academy of Sciences of the USSR}. 1980. Vol. 28. Issue 5. P. 845--848.
+\bibitem{bib5} Vedel Y. I., Semenov V. V.  A new two-phase proximal method of solving the problem of equilibrium programming.  \emph{Journal of Computational and Applied Mathematics}. 2015. No. 1 (118). P. 15--23.
+\bibitem{bib6} Kolesnykov V. A. Development of a Software Complex for Modeling Mass Transfer Process in Porous Media. PhD Dissertation, Taras Shevchenko National University of Kyiv. 2024. 137 p. (in Ukrainian)
+\bibitem{bib7} Python  3.10  [Електронний  ресурс]  --  Режим  доступу  до  ресурсу: https://www.python.org/downloads/release/python-3100/
+\bibitem{bib8} Gonzalez D., Garcнa-Vбzquez J., Bravo-Zanoguera M. et al. ECG Standardsand Formats for Interoperability between mHealth and Healthcare InformationSystems: A Scoping Review. \textit{International Journal of Environmental Research andPublic Health.} 2022, 19. 11941. https://doi.org/10.3390/ijerph191911941.
+\bibitem{bib9} Moody G. et al. "WFDB Software Package"(version 10.7.0). PhysioNet2022, https://doi.org/10.13026/gjvw-1m31.
+\bibitem{bib10}  Nahrstaedt H., Kern S., LucaCerina et al. holgern/pyedflib: v0.1.23 (v0.1.23). \textit{Zenodo.} 2020. https://doi.org/10.5281/zenodo.5678481.
+\bibitem{bib11} MIT-BIH Arrhythmia Database [Електронний ресурс] -- Режим доступу до ресурсу: https://www.physionet.org/content/mitdb/1.0.0/
+\bibitem{bib12}  Aquanty Inc. HGS user manual. Waterloo, ON: Aquanty Inc. 2015.
+\bibitem{bib13} Dirersch H.-J. G. FEFLOW 5.1 user’s manual. Berlin, Germany: WASY Institutefor Water Resources Planning and Systems Research Ltd. 2009.
+\bibitem{bib14} Anderson T. The statistical analysis of time series. \textit{Moscow: Mir,} 1976. 756 p. (in Russian)
+\bibitem{bib15}  Zhai S., Likhomanenko T., Littwin E., Busbridge D., Ramapuram J., Zhang Y.,Gu J., Susskind J.M. Stabilizing Transformer Training by Preventing AttentionEntropy Collapse. \textit{ArXiv.} 2023. Abs/2303.06296.57
+
+
+
+
+\end{thebibliography}
+
+\bigskip
+
+\begin{flushright}
+Надійшла: dd.mm.yyyy / Прийнята: dd.mm.yyyy / Опублікована: dd.mm.yyyy
+\end{flushright}
+
+
+
+}
+
+\end{document}
+
