@@ -1,0 +1,187 @@
+УДК 378.147.091.33:004.77:005.8
+
+Vitaliy PLATONOV, Senior Lecturer at the Department of Optimal Control and Economic Cybernetics, Odesa I. I. Mechnikov National University, Odesa, Ukraine, ORCID: https://orcid.org/0009-0006-5929-595X, email: v.platonov@onu.edu.ua
+
+Yevheniia PLATONOVA, Senior Lecturer at the Department of Optimal Control and Economic Cybernetics, Odesa I. I. Mechnikov National University, Odesa, Ukraine, ORCID: https://orcid.org/0000-0002-6405-5604, email: jane.platonova@onu.edu.ua
+
+Anzhela STEKHUN, PhD in Physical and Mathematical Sciences, Associate Professor, Associate Professor at the Department of Optimal Control and Economic Cybernetics, Odesa I. I. Mechnikov National University, Odesa, Ukraine, ORCID: https://orcid.org/0000-0003-3140-2689, email: a.stekhun@onu.edu.ua
+
+Serious games and simulation workshops at different stages of IT specialist education and training
+
+Abstract. The article investigates the scientific and methodological foundations, architectural principles, and practical outcomes of implementing differentiated models of serious games and simulation workshops across different levels of higher education in information technology. The relevance of the study stems from the urgent need to bridge the cognitive and practical gap between traditional academic instruction and the requirements of the modern software industry in the context of digital transformation and blended learning. The rationale for a multi-tiered differentiation of game mechanics tailored to the professional maturity of higher education students is substantiated. For experimental validation, two distinct instructional models were designed and deployed: a conceptual Scenario-Based Learning (SBL) workshop on the Mural virtual collaborative whiteboard for 5th-year master's students (within the course "Project and Startup Management") and a full-lifecycle technical Scrum simulation utilizing GitHub Projects for 2nd-year undergraduate students (within the course "Software Product Development and Testing Technologies"). In the master's cohort, a role-playing case study on academic integrity was conducted using the Scarcity game mechanic, requiring students to pivot from divergent brainstorming to rigorous prioritization under a constrained token budget. In the undergraduate cohort, a distributed, cross-functional simulation of the complex software product VARTA was run across two complete sprints, incorporating vertical slice development, an API contract-first approach, and the remediation of operational/infrastructure debt (Ops debt). Based on empirical metadata, backlog quantitative metrics (ticket volume, Story Points, completion rates) and qualitative dimensions of team dynamics were thoroughly analyzed. The study identified the phenomenon of cognitive backlog overbooking among lower-division undergraduates (exceeding planned capacity by 50% in Sprint 2) and demonstrated the critical importance of early infrastructure task integration. Finally, didactic recommendations are formulated for university faculty to optimize simulation-based learning in IT education.
+
+Keywords: serious games, simulation workshops, scenario-based learning, Scrum, gamification, Mural, GitHub Projects, project management, higher education.
+
+Introduction. Higher education in Ukraine is undergoing profound transformations driven by the imperative to transition away from passive, reproductive knowledge transmission toward interactive, practice-oriented instructional strategies. Amid the wide-scale adoption of blended and remote learning modalities, the cultivation of professional and digital competencies among future information technology specialists has become especially crucial [11]. Preparing competitive professionals in software engineering and project management necessitates a differentiated pedagogical approach that reflects the personal and professional developmental trajectories of students at distinct educational tiers.
+
+For first-cycle (bachelor's) students—specifically second-year undergraduates who are just beginning to master team-based software engineering—the primary hurdle is overcoming the psychological and practical gap between abstract theoretical knowledge of programming syntax or algorithms and the real-world engineering practices involved in building cohesive software products. At this foundational stage, fostering initial competencies in collaborative team interaction, engineering role distribution, and the hands-on application of agile methodologies (Agile/Scrum) supported by modern version control and issue-tracking ecosystems is paramount. In contrast, for second-cycle (master's) students (5th year of study), who already possess a baseline technical stack and are advancing toward systems analysis, software architecture, and engineering leadership, the pedagogical focus shifts toward strategic management, navigating ethical dilemmas, and decision-making under high uncertainty and resource scarcity.
+
+One of the most effective pedagogical vehicles for bridging these gaps is the methodology of serious games [1, 13] and Scenario-Based Learning (SBL) [2]. Establishing a didactically grounded and psychologically safe simulation environment empowers undergraduate students to rehearse intricate technical procedures and master's students to navigate complex governance and managerial decisions without exposing stakeholders to financial, technical, or reputational hazards.
+
+Literature Review. The theoretical and methodological underpinnings of gamification and serious games in education are extensively established in the seminal works of K. Kapp [1], who defined core mechanisms for tailoring game elements across different educational contexts. The significance of play in stimulating divergent thinking and cognitive flexibility was explored by J. Brown [3]. The MDA (Mechanics-Dynamics-Aesthetics) framework, formalized by R. Hunicke, M. LeBlanc, and R. Zubek [4], provides a robust conceptual foundation for educational game design by explicating the interplay among formal rules (mechanics), run-time participant behavior (dynamics), and emotional/cognitive reception (aesthetics). A comprehensive framework for assessing the effectiveness of serious games in software engineering education was presented by A. Calderón and M. Ruiz [15].
+
+The integration of agile frameworks—most notably Scrum—into university curricula has garnered substantial scholarly focus. V. Varenyk and Zh. Piskova [5] examined the implementation of Scrum within Ukrainian higher education institutions to foster communication competencies. The modeling of team communication workflows and consensus-driven decision-making in Scrum environments was analyzed by O. Kichmarenko, Ye. Platonova, and V. Platonov [6]. A. V. Chorna demonstrated the efficacy of Scrum as an overarching practical training vehicle for prospective software engineers [7]. At the general pedagogical level, the affordances of digital game technologies in structuring blended learning environments were comprehensively investigated by N. V. Morze and M. A. Gladun [12].
+
+At the international level, broad systematic reviews of empirical studies on agile adoption were synthesized by T. Dybå and T. Dingsøyr [8]. Curricular frameworks and case studies for teaching agile software engineering in higher education were proposed by H. Sharif and C. Abran [9] and further expanded by M. Kropp and A. Meier [14], who underscored the critical necessity of coupling technical development artifacts with authentic business simulations. Despite this extensive literature, there remains a notable gap regarding the comparative analysis and multi-level differentiation of game-based simulations across the educational continuum: moving from conceptual-analytical scenario workshops (for graduate cohorts) to tool-centered engineering simulations (for undergraduate cohorts).
+
+Research Goal and Objectives. The aim of this research is to theoretically substantiate, design, and comparatively evaluate the effectiveness of differentiated serious game models and simulation workshops in higher IT education: a conceptual scenario-based workshop for second-cycle (master's) students and a tool-oriented Scrum simulation for first-cycle (bachelor's) students.
+
+To achieve this goal, the following research objectives were addressed:
+
+1. Conduct a theoretical analysis of approaches to differentiating game mechanics and simulation architectures based on the academic degree level and professional maturity of students.
+
+2. Design, deploy, and evaluate a conceptual Scenario-Based Learning (SBL) workshop on the Mural platform utilizing the Scarcity game mechanic for master's students.
+
+3. Architect and execute an end-to-end software development lifecycle simulation grounded in Scrum and GitHub Projects for undergraduate students.
+
+4. Analyze empirical quantitative and qualitative indicators of learning dynamics (task volumes, Story Point trajectories, backlog overbooking risks, and the emergence of Ops debt), and formulate scientific and didactic recommendations for university instructors.
+
+Materials and Methods. The study employed a quasi-experimental design combined with structured pedagogical observation, conducted throughout the 2023–2024 academic year at the Department of Optimal Control and Economic Cybernetics of Odesa I. I. Mechnikov National University.
+
+Two student cohorts participated in the study:
+
+1. Master's cohort (Year 1 of the master's program / 5th year of higher education, N = 16 students enrolled in Major 111 "Mathematics" and Major 113 "Applied Mathematics"), participating within the course "Project and Startup Management." The workshop spanned 4 academic hours and took place in the interactive virtual workspace of the Mural platform [10].
+
+2. Undergraduate cohort (Year 2 of the bachelor's program, N = 27 students enrolled in Major 113 "Applied Mathematics"), taking the course "Software Product Development and Testing Technologies." The practicum spanned 4 laboratory sessions (8 academic hours) organized as two complete Scrum sprints. Project governance and software development were managed within a dedicated GitHub Organization using GitHub Projects Kanban boards.
+
+The research methodology incorporated:
+
+- Modeling and scenario engineering (formulation of project lore, interaction protocols, and evaluation rubrics);
+
+- Objective instrumental monitoring (automated extraction and analysis of GitHub API metadata: ticket counts, issue label taxonomies, completion statuses, Story Points, commit histories, and pull requests);
+
+- Qualitative artifact content analysis (virtual sticky notes on Mural, decision matrices, retrospective debriefing transcripts);
+
+- Pedagogical observation and reflective analysis of group dynamics.
+
+Results. The designed simulation models reflect intentional specialization by academic degree level and leverage appropriate digital toolsets.
+
+1. Conceptual Scenario-Based Learning Workshop Model for Master's Students (Mural Platform)
+
+For graduate students, a conceptual game workshop was instituted to cultivate competencies in strategic planning, strict resource prioritization, and ethical conflict resolution. The authentic challenge posed to the master's students was to engineer a comprehensive institutional system for preventing academic dishonesty among lower-division undergraduates. Master's students assumed the role of "expert consultants," leveraging their own educational background and fostering learner agency.
+
+The workshop was structured around the Scenario-Based Learning (SBL) framework [2] and unfolded across five sequential phases:
+
+- Phase 1: Immersion. The instructor acted as the executive stakeholder presenting a strategic problem: designing an antifragile academic integrity ecosystem. The master's students acted as systemic solution architects.
+
+- Phase 2: Exploration. A divergent brainstorming sprint on a shared Mural canvas: within a fixed time window (10 minutes), participants generated the maximum number of hypotheses on digital sticky notes without prior critique or filtering.
+
+- Phase 3: Convergence. Participants organized sticky notes into functional clusters, eliminated duplicates, and mapped semantic connections between proposals.
+
+- Phase 4: Choice Crisis. Activation of the Scarcity game mechanic: each participant was allocated a strictly rationed resource—exactly 8 digital voting tokens. This artificial constraint mirrored real-world budget, timeline, and staffing limits, compelling students to shift from passive consensus to rigorous rational selection guided by the MDA framework [4].
+
+- Phase 5: Consequence Analysis. Plotting prioritized initiatives onto an Action Priority Matrix ("Feasibility vs. Importance") and examining the "dead zone"—promising proposals that failed to secure requisite resource allocation.
+
+The didactic value, competencies developed, and cognitive impact of each phase of the SBL workshop are systematically presented in Table 1.
+
+Table 1. Didactic Value and Competencies Developed in the Scenario-Based Learning (SBL) Workshop
+
+| Workshop Phase | Competencies and Skills Developed | Pedagogical and Cognitive Impact |
+| --- | --- | --- |
+| Phase 1: Immersion | Systems thinking, learner agency, empathy | Transition from passive objects of control to solution architects; alignment with real-world managerial roles; high cognitive engagement |
+| Phase 2: Exploration | Divergent thinking, creativity, teaming | Barrier-free hypothesis generation; dynamic live-project atmosphere via real-time board visualization; establishing a shared group knowledge asset |
+| Phase 3: Convergence | Analytical clustering, critical reflection | Taxonomic structuring, eliminating redundancies; collaborative evaluation of proposal viability; peer knowledge exchange and holistic synthesis |
+| Phase 4: Choice Crisis | Strategic prioritization, pragmatic choice | Simulating budget and schedule scarcity via rationed tokens (8 votes); shift from emotional liking to rational selection; competitive discipline |
+| Phase 5: Consequence Analysis | Strategic assessment, argumentation | Two-dimensional mapping (Feasibility vs. Importance); understanding trade-offs via "dead zone" analysis; defending choices and public advocacy |
+
+2. Technical Scrum Simulation Model for Undergraduates (GitHub Projects Platform)
+
+For second-year undergraduates, a full-cycle software engineering Scrum simulation was implemented. Students were organized into three parallel decentralized teams (Alpha, Beta, Gamma) of 9 members each. Each team established cross-functional roles: Systems Analyst / Subject Matter Expert (SME), UX/UI Designer, Software Developers (Dev), QA Engineers, and Ops/DevOps Engineers, with built-in role rotation. Instructors fulfilled the roles of Product Owner and Scrum Master, facilitating ceremonies and validating acceptance criteria.
+
+The project under development was VARTA (Distributed Resilience Orchestrator)—a decentralized mesh-networking platform engineered to coordinate local municipal resources and volunteer efforts during civil emergencies. Moving away from boilerplate CRUD assignments compelled students to devise non-trivial architectural solutions. The simulation spanned two full sprints. Project execution was managed through GitHub Projects using standardized prefix-based issue taxonomy (EC – Edge Case, TT – Technical Task, TC – Test Case, etc.).
+
+In Sprint 1, teams concentrated on producing a vertical slice of the application—an end-to-end user story integrating analytical specifications, UI wireframes, frontend interfaces, server-side business logic, and automated tests into a single deployable increment. In Sprint 2, an API contract-first methodology was enacted to facilitate inter-team subsystem integration and systematically remediate accumulated technical and Ops debt. The pedagogical impact of the simulation components is summarized in Table 2.
+
+Table 2. Educational Impact and Competencies Developed in the Scrum Simulation
+
+| Simulation Element | Competencies Developed | Pedagogical and Educational Impact |
+| --- | --- | --- |
+| Decentralized teams | Coordination, group communication, teaming | Replicating distributed engineering; adapting to team dynamics |
+| Cross-functional roles & rotation | Adaptability, cross-discipline empathy | Comprehensive understanding of the software development lifecycle |
+| Instructor as PO / Scrum Master | Scope management, stakeholder negotiation | Demonstrating industry communication norms and increment reviews |
+| Complex project: VARTA | Systems thinking, managing uncertainty | Breaking template thinking; tackling non-trivial architecture |
+| GitHub Projects & Kanban boards | Industry tooling proficiency, discipline | Rigorous task decomposition, progress tracking, and risk management |
+| Sprint 1: Vertical Slice | End-to-end integration, team focus | Realizing the intrinsic value of a deployable product increment |
+| Sprint 2: Contract-First & Ops Debt | Integration engineering, debt remediation | Contract-driven API design; ownership of infrastructure resilience |
+
+3. Empirical Analysis of Group Dynamics and Task Structure
+
+To evaluate undergraduate workflow behavior objectively, quantitative metrics were logged across both sprints (Table 3). Each team's nominal planned capacity was calibrated at 40 Story Points (SP) per sprint (totaling 120 SP across all three teams).
+
+Table 3. Scrum Simulation Metrics Across Two Sprints (Year 2 Undergraduates)
+
+| Metric | Sprint 1 | Sprint 2 |
+| --- | --- | --- |
+| Total backlog tickets registered | 128 | 99 |
+| Planned team capacity per sprint (SP) | 40 | 40 |
+| Actual team commitment committed (SP, mean) | 44 | 60 |
+| Successfully closed tickets by sprint end (%) | — | 76 (76.8%) |
+| Incomplete / rolled-over tickets to backlog (%) | — | 23 (23.2%) |
+
+Analysis of the backlog distribution demonstrated a pronounced evolution in development focus:
+
+- In Sprint 1, preparatory and definition workflows dominated: Test Cases accounted for 18.8% of all logged issues, Technical Tasks represented 17.2%, and User Flow / UX tickets constituted 14.8%. Ticket generation velocity across teams was uneven: Alpha generated 48.4%, Beta 26.6%, and Gamma 25.0%.
+
+- In Sprint 2, team effort pivoted directly toward core implementation and integration: engineering tasks accounted for 24.2%, while infrastructure/operations tasks (Ops) surged to 23.2% (a 64.0% relative increase in the proportion of Ops tickets compared to Sprint 1). Team activity distribution was: Alpha – 54.5%, Beta – 10.1%, Gamma – 35.4%. Team Alpha experienced disproportionate strain because it assumed ownership of the core integration gateway coordinating all peripheral subsystems.
+
+Discussion. A comparative analysis of both simulation models yields key theoretical and pedagogical insights:
+
+1. Cognitive Maturity and Abstraction Perception. First-year master's students demonstrated an advanced capacity for conceptual modeling within the Mural environment, successfully translating the broad problem of academic dishonesty into 14 multifaceted strategic project proposals. Conversely, second-year undergraduates required significantly more rigid operational scaffolding, which was effectively afforded by GitHub Projects through structured issue templates, milestone cadences, and workflow statuses. This observation aligns with findings by Kropp and Meier [14] regarding junior engineering students' reliance on concrete operational boundaries.
+
+2. Backlog Cognitive Overbooking Phenomenon. The most prominent quantitative finding was the emergence of cognitive backlog overbooking within the undergraduate cohort: energized by their initial delivery in Sprint 1, teams inflated their commitments in Sprint 2 from the baseline 40 SP to an average of 60 SP (a 50% commitment surge). This precipitated a classic integration bottleneck, leaving 23.2% of issues unfinished due to cross-module API integration dependencies and blockers. Experiencing this controlled crisis firsthand enabled undergraduates to grasp the vital necessity of disciplined planning and continuous Backlog Refinement, corroborating empirical insights from Dybå and Dingsøyr [8].
+
+3. Impact of Scarcity Mechanics and Infrastructure Tasks. Among graduate students, introducing the Scarcity mechanic operated as an effective filter against superficial or unfeasible ideas. In the undergraduate simulation, early operational (Ops) execution emerged as the primary determinant of project stability: attempting to push forward on feature development without solid CI/CD pipelines created severe bottlenecks during vertical slice assembly, underscoring the necessity of early DevOps integration.
+
+Ethical Standards Compliance. The pedagogical experiment adhered strictly to recognized international research ethics standards. Generative AI tools were not employed to generate empirical data or synthesize scientific findings.
+
+Conclusions. Implementing serious games and simulation workshops in higher education demands deliberate pedagogical differentiation aligned with student degree levels and professional maturity:
+
+1. For second-cycle (master's) students, conceptual Scenario-Based Learning workshops (conducted on interactive canvases such as Mural) are optimal; leveraging resource scarcity mechanics, they cultivate systemic managerial judgment, strategic prioritization, and ethical reflection.
+
+2. For first-cycle (bachelor's) students, tool-grounded software engineering simulations (Scrum workshops implemented via GitHub Projects) prove most impactful by fostering core teamwork proficiencies, standardized task categorization, and disciplined version control habits.
+
+This study makes several novel theoretical and practical contributions: for the first time, a model for differentiating serious game mechanics based on the MDA framework across tiers of student professional maturity was theoretically grounded and empirically validated (scenario modeling with token scarcity for graduate students vs. prefix-based contract task classification for undergraduates); pedagogical methods for teaching agile software engineering were advanced through the concept of a "controlled planning crisis" (backlog overbooking) coupled with an API contract-first paradigm applied to a complex distributed system; and methodologies for diagnosing and remediating technical and infrastructure debt (Ops debt) within student teams via instrumental GitHub Projects metrics were systematically established.
+
+Scientific and Methodological Recommendations for Higher Education Instructors:
+
+1. Didactic Structuring of the Planning Process: Allocate dedicated instructional time during laboratory sessions for facilitated Backlog Refinement, training students in relative estimation techniques (Planning Poker) and disciplined task decomposition (adhering to a recommended threshold of 8–13 Story Points per atomic task).
+
+2. Pedagogical Crisis Scaffolding: Implement a graduated autonomy strategy during the initial sprint, deliberately permitting standard planning pitfalls (such as overbooking) to surface, followed by an instructor-facilitated Sprint Retrospective to cultivate reflective engineering self-awareness.
+
+3. Aligning Engineering Standards with Assessment Rubrics: Adapt the Definition of Done (DoD) into an objective grading rubric, requiring formal cross-team API contract agreement (contract-first methodology) as a non-negotiable prerequisite prior to feature coding.
+
+4. Methodological Scaffolding for Infrastructure Roles: Formalize the role of DevOps/infrastructure engineer starting in Sprint 1, providing students with standardized repository boilerplate templates and preconfigured CI/CD workflows to prevent technical and Ops debt accumulation.
+
+Future Research Directions will focus on investigating the impact of cross-team role rotation on undergraduate skill acquisition velocity, conducting longitudinal tracking of simulation-based training on graduate career placement, and developing metric-based peer-review instruments for evaluating collaborative soft skills.
+
+References
+
+1. Kapp K. The Gamification of Learning and Instruction: Game-based Methods and Strategies for Training and Education. San Francisco : Pfeiffer, 2012. 336 p.
+
+2. Errington E. P. Creating Learning Spaces with Scenario-based Learning. Palmerston North : Oakhill Press, 2003. 180 p.
+
+3. Brown J., Vaughan B. Play: How it Shapes the Brain, Opens the Imagination, and Invigorates the Soul. New York : Avery, 2009. 240 p.
+
+4. Hunicke R., LeBlanc M., Zubek R. MDA: A Formal Approach to Game Design and Game Research. Proceedings of the AAAI Workshop on Challenges in Game AI. San Jose, California, 2004. Pp. 1–8.
+
+5. Varenyk V., Piskova Zh. Implementation of Scrum methodology elements in the educational process in Ukraine: new horizons for the development of communicative competencies. Pedagogical Sciences. 2025. Issue 85. Pp. 14–24. DOI: https://doi.org/10.33989/2524-2474.2025.1.14
+
+6. Kichmarenko O., Platonova Ye., Platonov V. Communication management and decision-making under Scrum framework. Successes and achievements in science. 2025. No. 3 (13). Pp. 431–442. DOI: https://doi.org/10.52058/3041-1254-2025-3(13)-431-442
+
+7. Chorna A. V. Scrum methodology as a practical method of training software engineers. Information Technologies in Education and Science: coll. of sci. papers. Melitopol, 2017. Issue 1 (9). Pp. 287–291.
+
+8. Dybå T., Dingsøyr T. Empirical studies of agile software development: A systematic review. Information and Software Technology. 2008. Vol. 50, No. 9–10. Pp. 833–859. DOI: https://doi.org/10.1016/j.infsof.2008.01.006
+
+9. Sharif H., Abran K. J. A framework for teaching agile software development: A university case study. Proceedings of the 14th Conference on Software Engineering Education and Training. Charlotte, North Carolina, 2001. Pp. 204–211.
+
+10. Mural. Collaborative Intelligence: The New Way to Work. 2024. URL: https://www.mural.co/ (accessed: 12.11.2026).
+
+11. Semerikov S. O., Teplytskyi O. I., Shokaliuk S. V. Developing digital competencies of future information technology specialists. Educational Dimension. 2021. Issue 4. Pp. 12–28. URL: kdpu.edu.ua.
+
+12. Morze N. V., Gladun M. A. The use of gamification technologies for organizing blended learning in higher education institutions. Information Technologies and Learning Tools. 2021. Vol. 84, No. 4. Pp. 138–156. URL: https://journal.iitta.gov.ua/index.php/itlt/.
+
+13. Al-Azawi R., Albadi A., Mahrin M. N. Serious games in computer science education: A systematic literature review. International Journal of Emerging Technologies in Learning (iJET). 2019. Vol. 14, No. 19. Pp. 137–152.
+
+14. Kropp M., Meier A. Teaching Agile Software Development at University: An Experience Report. Proceedings of the 42nd International Conference on Software Engineering: Software Engineering Education and Training (ICSE-SEET). Seoul, South Korea, 2020. Pp. 41–50. DOI: https://doi.org/10.1109/CSEET.2013.6595249
+
+15. Calderón A., Ruiz M. A systematic literature review on serious games evaluation: An approach from software engineering. Computers & Education. 2015. Vol. 87. Pp. 79–92. https://doi.org/10.1016/j.compedu.2015.07.011
