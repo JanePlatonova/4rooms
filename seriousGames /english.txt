@@ -54,14 +54,29 @@ The workshop was structured around the Scenario-Based Learning (SBL) framework [
 - Phase 4: Choice Crisis. Activation of the Scarcity game mechanic: each participant was allocated a strictly rationed resource—exactly 8 digital voting tokens. This artificial constraint mirrored real-world budget, timeline, and staffing limits, compelling students to shift from passive consensus to rigorous rational selection guided by the MDA framework [4].
 - Phase 5: Consequence Analysis. Plotting prioritized initiatives onto an Action Priority Matrix ("Feasibility vs. Importance") and examining the "dead zone"—promising proposals that failed to secure requisite resource allocation.
 
+The didactic value, competencies developed, and cognitive impact of each phase of the SBL workshop are systematically presented in Table 1.
+
+Table 1. Didactic Value and Competencies Developed in the Scenario-Based Learning (SBL) Workshop
+-----------------------------------------------------------------------------------------------------------------------------------------
+Workshop Phase                      | Competencies and Skills Developed          | Pedagogical and Cognitive Impact
+-----------------------------------------------------------------------------------------------------------------------------------------
+Phase 1: Immersion                  | Systems thinking, learner agency, empathy  | Transition from passive objects of control to solution architects; alignment with real-world managerial roles; high cognitive engagement
+Phase 2: Exploration                | Divergent thinking, creativity, teaming    | Barrier-free hypothesis generation; dynamic live-project atmosphere via real-time board visualization; establishing a shared group knowledge asset
+Phase 3: Convergence                | Analytical clustering, critical reflection | Taxonomic structuring, eliminating redundancies; collaborative evaluation of proposal viability; peer knowledge exchange and holistic synthesis
+Phase 4: Choice Crisis              | Strategic prioritization, pragmatic choice | Simulating budget and schedule scarcity via rationed tokens (8 votes); shift from emotional liking to rational selection; competitive discipline
+Phase 5: Consequence Analysis       | Strategic assessment, argumentation        | Two-dimensional mapping (Feasibility vs. Importance); understanding trade-offs via "dead zone" analysis; defending choices and public advocacy
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+As a result, the scenario workshop transcends a simple classroom exercise, serving as an authentic model of a real-world project environment in which graduate students holistically practice the transversal ("soft") and managerial competencies essential for future careers in the IT industry.
+
 2. Technical Scrum Simulation Model for Undergraduates (GitHub Projects Platform)
 For second-year undergraduates, a full-cycle software engineering Scrum simulation was implemented. Students were organized into three parallel decentralized teams (Alpha, Beta, Gamma) of 9 members each. Each team established cross-functional roles: Systems Analyst / Subject Matter Expert (SME), UX/UI Designer, Software Developers (Dev), QA Engineers, and Ops/DevOps Engineers, with built-in role rotation. Instructors fulfilled the roles of Product Owner and Scrum Master, facilitating ceremonies and validating acceptance criteria.
 
 The project under development was VARTA (Distributed Resilience Orchestrator)—a decentralized mesh-networking platform engineered to coordinate local municipal resources and volunteer efforts during civil emergencies. Moving away from boilerplate CRUD assignments compelled students to devise non-trivial architectural solutions. The simulation spanned two full sprints. Project execution was managed through GitHub Projects using standardized prefix-based issue taxonomy (EC – Edge Case, TT – Technical Task, TC – Test Case, etc.).
 
-In Sprint 1, teams concentrated on producing a vertical slice of the application—an end-to-end user story integrating analytical specifications, UI wireframes, frontend interfaces, server-side business logic, and automated tests into a single deployable increment. In Sprint 2, an API contract-first methodology was enacted to facilitate inter-team subsystem integration and systematically remediate accumulated technical and Ops debt. The pedagogical impact of the simulation components is summarized in Table 1.
+In Sprint 1, teams concentrated on producing a vertical slice of the application—an end-to-end user story integrating analytical specifications, UI wireframes, frontend interfaces, server-side business logic, and automated tests into a single deployable increment. In Sprint 2, an API contract-first methodology was enacted to facilitate inter-team subsystem integration and systematically remediate accumulated technical and Ops debt. The pedagogical impact of the simulation components is summarized in Table 2.
 
-Table 1. Educational Impact and Competencies Developed in the Scrum Simulation
+Table 2. Educational Impact and Competencies Developed in the Scrum Simulation
 -----------------------------------------------------------------------------------------------------------------------------------------
 Simulation Element                  | Competencies Developed                     | Pedagogical and Educational Impact
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -75,9 +90,9 @@ Sprint 2: Contract-First & Ops Debt | Integration engineering, debt remediation 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
 3. Empirical Analysis of Group Dynamics and Task Structure
-To evaluate undergraduate workflow behavior objectively, quantitative metrics were logged across both sprints (Table 2). Each team's nominal planned capacity was calibrated at 40 Story Points (SP) per sprint (totaling 120 SP across all three teams).
+To evaluate undergraduate workflow behavior objectively, quantitative metrics were logged across both sprints (Table 3). Each team's nominal planned capacity was calibrated at 40 Story Points (SP) per sprint (totaling 120 SP across all three teams).
 
-Table 2. Scrum Simulation Metrics Across Two Sprints (Year 2 Undergraduates)
+Table 3. Scrum Simulation Metrics Across Two Sprints (Year 2 Undergraduates)
 ---------------------------------------------------------------------------------------------------------
 Metric                                                      | Sprint 1                 | Sprint 2
 ---------------------------------------------------------------------------------------------------------
@@ -105,7 +120,7 @@ Limitations of the Study. This study is subject to several limitations: the samp
 Ethical Standards Compliance. The pedagogical experiment adhered strictly to recognized international research ethics standards. All participants across both cohorts provided informed voluntary consent for their participation and the academic analysis of anonymized activity metrics from the platforms (Mural, GitHub). Generative AI tools were not employed to generate empirical data or synthesize scientific findings.
 
 Conclusions. Implementing serious games and simulation workshops in higher education demands deliberate pedagogical differentiation aligned with student degree levels and professional maturity:
-1. For second-cycle (master's) students, conceptual Scenario-Based Learning workshops (conducted on interactive canvases such as Mural) are optimal; leveraging resource scarcity mechanics, they cultivate systemic managerial judgment, strategic prioritization, and ethical reflection.
+1. For second-cycle (master's) students, conceptual Scenario-Based Learning workshops (conducted on interactive canvases such as Mural) are optimal; their five-phase instructional architecture (from immersion to consequence analysis), coupled with resource scarcity mechanics, ensures a balanced transition from divergent hypothesis generation to convergent critical selection, cultivating systemic managerial judgment, strategic prioritization, and reflective thinking in future project managers.
 2. For first-cycle (bachelor's) students, tool-grounded software engineering simulations (Scrum workshops implemented via GitHub Projects) prove most impactful by fostering core teamwork proficiencies, standardized task categorization, and disciplined version control habits.
 
 This study makes several novel theoretical and practical contributions: for the first time, a model for differentiating serious game mechanics based on the MDA framework across tiers of student professional maturity was theoretically grounded and empirically validated (scenario modeling with token scarcity for graduate students vs. prefix-based contract task classification for undergraduates); pedagogical methods for teaching agile software engineering were advanced through the concept of a "controlled planning crisis" (backlog overbooking) coupled with an API contract-first paradigm applied to a complex distributed system; and methodologies for diagnosing and remediating technical and infrastructure debt (Ops debt) within student teams via instrumental GitHub Projects metrics were systematically established.
@@ -115,6 +130,7 @@ Scientific and Methodological Recommendations for Higher Education Instructors:
 2. Pedagogical Crisis Scaffolding: Implement a graduated autonomy strategy during the initial sprint, deliberately permitting standard planning pitfalls (such as overbooking) to surface, followed by an instructor-facilitated Sprint Retrospective to cultivate reflective engineering self-awareness.
 3. Aligning Engineering Standards with Assessment Rubrics: Adapt the Definition of Done (DoD) into an objective grading rubric, requiring formal cross-team API contract agreement (contract-first methodology) as a non-negotiable prerequisite prior to feature coding.
 4. Methodological Scaffolding for Infrastructure Roles: Formalize the role of DevOps/infrastructure engineer starting in Sprint 1, providing students with standardized repository boilerplate templates and preconfigured CI/CD workflows to prevent technical and Ops debt accumulation.
+5. Facilitation of Scenario-Based Learning and Cognitive Transition: When conducting SBL workshops, instructors should strictly delineate phases of divergence and convergence, utilizing the Scarcity mechanic not as a punitive constraint, but as a deliberate didactic lever to prompt the shift from uncritical ideation to rigorous strategic prioritization.
 
 Future Research Directions will focus on investigating the impact of cross-team role rotation on undergraduate skill acquisition velocity, conducting longitudinal tracking of simulation-based training on graduate career placement, and developing metric-based peer-review instruments for evaluating collaborative soft skills.
 
