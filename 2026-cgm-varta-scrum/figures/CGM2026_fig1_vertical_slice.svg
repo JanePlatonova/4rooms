@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 600" width="920" height="600">
+  <defs>
+    <style type="text/css"><![CDATA[
+      .title { font: bold 15px "Segoe UI", Arial, sans-serif; fill: #1a1a1a; }
+      .sub { font: 12px "Segoe UI", Arial, sans-serif; fill: #333; }
+      .role { font: bold 13px "Segoe UI", Arial, sans-serif; fill: #0d2744; }
+      .roleuk { font: 11px "Segoe UI", Arial, sans-serif; fill: #2c5282; }
+      .roleen { font: 11px "Segoe UI", Arial, sans-serif; fill: #2b6cb0; }
+      .box { fill: #f7fafc; stroke: #2c5282; stroke-width: 2; }
+      .boxdark { fill: #ebf8ff; stroke: #2b6cb0; stroke-width: 2; }
+      .done { fill: #c6f6d5; stroke: #276749; stroke-width: 2; }
+      .dash { stroke: #4a5568; stroke-width: 1.5; fill: none; stroke-dasharray: 6 4; }
+      .solid { stroke: #2d3748; stroke-width: 1.8; fill: none; }
+    ]]></style>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2d3748"/>
+    </marker>
+  </defs>
+
+  <rect x="220" y="20" width="480" height="56" rx="8" class="boxdark"/>
+  <text x="460" y="48" text-anchor="middle" class="sub">&#x041e;&#x0431;&#x0440;&#x0430;&#x043d;&#x0430; User Story (Sprint Backlog)</text>
+  <text x="460" y="66" text-anchor="middle" class="sub">Selected User Story (Sprint Backlog)</text>
+  <line x1="460" y1="76" x2="460" y2="100" class="solid" marker-end="url(#arrow)"/>
+
+  <rect x="60" y="100" width="800" height="380" rx="12" class="box" stroke-dasharray="8 4"/>
+  <text x="460" y="128" text-anchor="middle" class="title">&#x0421;&#x043f;&#x0440;&#x0438;&#x043d;&#x0442;: &#x043f;&#x0430;&#x0440;&#x0430;&#x043b;&#x0435;&#x043b;&#x044c;&#x043d;&#x0430; &#x0440;&#x043e;&#x0431;&#x043e;&#x0442;&#x0430; &#x043a;&#x043e;&#x043c;&#x0430;&#x043d;&#x0434;&#x0438;</text>
+  <text x="460" y="148" text-anchor="middle" class="sub">Sprint: parallel cross-functional work</text>
+
+  <rect x="100" y="172" width="130" height="88" rx="6" class="boxdark"/>
+  <text x="165" y="200" text-anchor="middle" class="role">SME</text>
+  <text x="165" y="220" text-anchor="middle" class="roleuk">&#x0412;&#x0438;&#x043c;&#x043e;&#x0433;&#x0438;, &#x043f;&#x0440;&#x0430;&#x0432;&#x0438;&#x043b;&#x0430;</text>
+  <text x="165" y="238" text-anchor="middle" class="roleen">Rules &amp; domain</text>
+
+  <rect x="270" y="172" width="130" height="88" rx="6" class="boxdark"/>
+  <text x="335" y="200" text-anchor="middle" class="role">UX</text>
+  <text x="335" y="220" text-anchor="middle" class="roleuk">&#x041f;&#x043e;&#x0442;&#x043e;&#x043a;&#x0438;, &#x043b;&#x043e;&#x0433;&#x0456;&#x043a;&#x0430;</text>
+  <text x="335" y="238" text-anchor="middle" class="roleen">Flows &amp; UX logic</text>
+
+  <rect x="395" y="302" width="150" height="100" rx="8" class="boxdark" stroke-width="2.5"/>
+  <text x="470" y="340" text-anchor="middle" class="role">DEV</text>
+  <text x="470" y="360" text-anchor="middle" class="roleuk">&#x041a;&#x043e;&#x0434; / API</text>
+  <text x="470" y="378" text-anchor="middle" class="roleen">Code / API</text>
+
+  <rect x="600" y="172" width="130" height="88" rx="6" class="boxdark"/>
+  <text x="665" y="200" text-anchor="middle" class="role">OPS</text>
+  <text x="665" y="220" text-anchor="middle" class="roleuk">&#x041f;&#x0430;&#x0439;&#x043f;&#x043b;&#x0430;&#x0439;&#x043d;, &#x0411;&#x0414;</text>
+  <text x="665" y="238" text-anchor="middle" class="roleen">Pipeline / data</text>
+
+  <rect x="600" y="332" width="130" height="88" rx="6" class="boxdark"/>
+  <text x="665" y="360" text-anchor="middle" class="role">QA</text>
+  <text x="665" y="380" text-anchor="middle" class="roleuk">&#x0422;&#x0435;&#x0441;&#x0442;-&#x0441;&#x0442;&#x0440;&#x0430;&#x0442;&#x0435;&#x0433;&#x0456;&#x044f;</text>
+  <text x="665" y="398" text-anchor="middle" class="roleen">Test strategy</text>
+
+  <path d="M 165 260 L 165 278 Q 165 292 280 310 L 395 340" class="dash" marker-end="url(#arrow)"/>
+  <path d="M 335 260 L 335 278 Q 335 295 420 320 L 420 340" class="dash" marker-end="url(#arrow)"/>
+  <path d="M 665 260 L 665 278 Q 665 292 540 320 L 540 340" class="dash" marker-end="url(#arrow)"/>
+  <path d="M 545 370 L 600 368" class="dash" marker-end="url(#arrow)"/>
+
+  <line x1="470" y1="402" x2="470" y2="440" class="solid" marker-end="url(#arrow)"/>
+
+  <rect x="300" y="450" width="340" height="72" rx="10" class="done"/>
+  <text x="470" y="484" text-anchor="middle" class="title">&#x0413;&#x043e;&#x0442;&#x043e;&#x0432;&#x043e; &#x2014; &#x0440;&#x043e;&#x0431;&#x043e;&#x0447;&#x0438;&#x0439; &#x0456;&#x043d;&#x043a;&#x0440;&#x0435;&#x043c;&#x0435;&#x043d;&#x0442;</text>
+  <text x="470" y="506" text-anchor="middle" class="sub">DONE &#x2014; working increment (Definition of Done)</text>
+</svg>
