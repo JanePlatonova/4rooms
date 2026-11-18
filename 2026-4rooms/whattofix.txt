@@ -3,6 +3,35 @@ https://csc.knu.ua/uk/scientific-journals
 
 https://jnam.knu.ua/index.php/jnam/uk/information/authors
 
+what to fix
+E-mail vitaly.platonov@gmail.com change to v.platonov@onu.edu.ua
+jane.platonova@gmail.com change to jane.platonova@onu.edu.ua
 
-посилання на літературу мають doi інших статей - я исправлю сама но в последнюю очередь
+PLATONOV ORCID: 0009-0006-5929-595X
+PLATONOVA ORCID: 0000-0002-6405-5604
 
+Література правильное  doi или ссілка
+1.  https://doi.org/10.1109/SP46214.2022.9833571
+2. https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/bade/documents/products-and-services/en-us/security/Taxonomy-of-Failure-Modes-in-Agentic-AI-Systems-v2-0.pdf
+3. https://arxiv.org/abs/2603.06847
+4. такой статьт не существует, наиболее близкая https://www.saastr.com/replits-new-release-address-most-of-the-challenges-we-hit-vibe-coding-but-is-prosumer-vibe-coding-really-ready-for-commercial-apps-yet/
+5. http://incompleteideas.net/book/the-book-2nd.html
+6.
+7.
+8. 
+9. 
+10.
+11.
+12. https://hbr.org/2008/06/design-thinking
+13. https://doi.org/10.48550/arXiv.1706.02216
+14. https://doi.org/10.48550/arXiv.1806.08804
+15. https://doi.org/10.1109/TSMC.1983.6313167
+16. 
+17. https://doi.org/10.48550/arXiv.2305.10601
+18. https://doi.org/10.1609/aimag.v7i2.537
+19. 
+20.
+21.
+22.
+23.https://doi.org/10.1002/9780470316887
+24.https://doi.org/10.18653/v1/D19-1410
